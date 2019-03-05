@@ -94,5 +94,6 @@ function buildMessageDiv(message) {
 function buildUI() {
   setPageTitle();
   showMessageForm();
+  ClassicEditor.create( document.getElementById('message-input') );
   fetchMessages();
 }
