@@ -93,7 +93,9 @@ function buildMessageDiv(message) {
 /** Fetches data and populates the UI of the page. */
 function buildUI() {
   setPageTitle();
+  //ClassicEditor.create( document.getElementById('message-input') );
+  const config = {removePlugins: [ 'ImageUpload' ]};
+  ClassicEditor.create(document.getElementById('message-input'), config );
   showMessageForm();
-  ClassicEditor.create( document.getElementById('message-input') );
   fetchMessages();
 }
