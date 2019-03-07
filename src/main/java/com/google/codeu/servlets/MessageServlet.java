@@ -81,8 +81,7 @@ public class MessageServlet extends HttpServlet {
     //String replacement = "<img src=\"$1\" />";
     //String textWithImagesReplaced = userText.replaceAll(regex, replacement);
     String userEnteredContent = request.getParameter("text");
-    Whitelist whitelist = Whitelist.basicWithImages(); //bc we want the user to be able to embed images
-    String sanitizedContent = Jsoup.clean(userEnteredContent, whitelist); //jsoup.clean is used to sanitize the user content
+    String sanitizedContent = Jsoup.clean(userEnteredContent, Whitelist.none()); //jsoup.clean is used to sanitize the user content
     String recipient = request.getParameter("recipient");
 
     Message message = new Message(user, sanitizedContent, recipient);

@@ -40,7 +40,13 @@ function addLoginOrLogoutLinkToNavigation() {
           navigationElement.appendChild(
               createListItem(createLink('/login', 'Login')));
         }
+		navigationElement.appendChild(createListItem(createLink('/feed.html', 'Public Feed')));
       });
+}
+
+function buildNavBar() {
+	// Add login/logout link
+	addLoginOrLogoutLinkToNavigation();
 }
 
 /**
