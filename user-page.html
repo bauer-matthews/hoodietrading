@@ -1,0 +1,156 @@
+<!--
+Copyright 2019 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Board</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/user-page.css">
+    <link href='https://fonts.googleapis.com/css?family=Ribeye Marrow' rel='stylesheet'>
+    <script src="/js/user-page-loader.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+    <style>
+
+      form {
+        color: #a3040a;
+        font-size: 23pt;
+      }
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+      }
+      body {
+        background-color: #ffcd05;
+        padding: 25px 75px 75px 100px;
+        font-family: 'Ribeye Marrow';
+      }
+
+      p {
+        color: #a3040a;
+        font-size: 24pt;
+        text-align: left;
+      }
+
+      h3 {
+        color: #a3040a;
+        font-size: 24pt;
+        text-align: center;
+      }
+
+      h1{
+        border: thick solid white;
+        border-radius: 25px;
+        background: #a3040a;
+        text-align: center;
+        font-size: 40pt;
+        color: white
+      }
+
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+
+    </style>
+  </head>
+  <body onload="buildUI();">
+  <nav>
+
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <ul id="navigation">
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+
+    <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+  </script>
+  </nav>
+    <h1 id="page-title">User Page</h1>
+
+    <form id="message-form" action="/messages" method="POST" class="hidden">
+      Enter a new message:
+      <br/>
+      <textarea name="text" id="message-input"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+    <hr/>
+
+    <div id="message-container" style = "color:#a3040a">Loading...</div>
+
+  </body>
+</html>
