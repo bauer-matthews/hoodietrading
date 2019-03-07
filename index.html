@@ -1,0 +1,208 @@
+<!--
+Copyright 2019 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Ribeye Marrow' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title>CodeU 2019 Hoodie Trading </title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/navigation-loader.js"></script>
+    <style>
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+      }
+      body {
+        background-color: #a3040a;
+        padding: 25px 75px 75px 100px;
+        font-family: 'Ribeye Marrow';
+      }
+
+      p {
+        color: white;
+        font-size: 20pt;
+        text-align: center;
+      }
+
+      h3 {
+        color: #ffcd05;
+        font-size: 24pt;
+        text-align: center;
+      }
+
+      h1{
+        border: thick solid white;
+        border-radius: 25px;
+        background: #ffcd05;
+        text-align: center;
+        font-size: 40pt;
+      }
+
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+
+    </style>
+  </head>
+
+  <body onload="addLoginOrLogoutLinkToNavigation();">
+
+  <nav>
+
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <ul id="navigation">
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
+
+    <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+  </script>
+  </nav>
+  <h1>CodeU 2019 Hoodie Trading Hub</h1>
+  <p>Welcome!</p>
+  <p>Below is the full list of those who signed up to bring hoodies to the retreat in March. Please contact them if
+    you'd like to trade with them and specify sizes, etc. Questions? DM Faesal or Sebrianne.</p>
+
+  <h3> Amanda Cao (University of California, Riverside) </h3>
+  <p> Quantity: 1 | Condition: Used </p>
+  <a href = ""><img src="https://i.postimg.cc/CxhpmQjD/IMG-3902.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Faesal Murad (University of Victoria) </h3>
+  <p> Quantity: 3 | Condition: New </p>
+  <a href = ""><img src="https://www.uvicbookstore.ca/images/pic/1067-2979big.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Gabriela Corona (Instituto Tecnológico y de Estudios Superiores de Monterrey) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://store.tec.mx/6578-thickbox_default/sudadera-tec-antorcha-hf17005.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Imani Tyson (Fisk University) </h3>
+  <p> Quantity: 2 | Condition: New </p>
+  <a href = ""><img src="https://i.postimg.cc/d1Lyd6Hc/fisk.png"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Joel Ramos Munoz (Western Washington University) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://www.bookstore.wwu.edu/webitemimages/444/400000074.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Jacob Murillo (University of North Texas) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://staticx.ibncollege.com/wcsstore/ExtendedSitesCatalogAssetStore/801_100_60_268219564/images/LARGEIMAGE_1599490.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Joshua Verdejo (Massachusetts Institute of Technology) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://i.postimg.cc/c4mwpv8j/image.png"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Leoul Tilahun (Morehouse College) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://bkstr.scene7.com/is/image/Bkstr/598-CS2071-P3208761-Black?$PDPMain$"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Mary Pwint (Tulane University) </h3>
+  <p> Quantity: 2 | Condition: New </p>
+  <a href = ""><img src="https://staticx.ibncollege.com/wcsstore/ExtendedSitesCatalogAssetStore/801_100_60_258382464/images/LARGEIMAGE_1518765.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Rebecca Xu (University of California, Los Angeles) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://shop.uclastore.com/images/product/medium/124853.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Sandy Xie (Georgia Institute of Technology) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://staticx.ibncollege.com/wcsstore/ExtendedSitesCatalogAssetStore/801_100_70_43829/images/LARGEIMAGE_1003056.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Sebrianne Ferguson (San Jose State University) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://staticx.ibncollege.com/wcsstore/ExtendedSitesCatalogAssetStore/801_100_60_304073330/images/LARGEIMAGE_1506139.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  <h3> Sophia Giordano (Vanderbilt University) </h3>
+  <p> Quantity: 1 | Condition: New </p>
+  <a href = ""><img src="https://staticx.ibncollege.com/wcsstore/ExtendedSitesCatalogAssetStore/801_100_60_259240353/images/LARGEIMAGE_1395538.jpg"
+                    style="width:270px;height:300px;" > </a>
+
+  </body>
+</html>
