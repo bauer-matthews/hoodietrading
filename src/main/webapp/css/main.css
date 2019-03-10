@@ -13,12 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* Prevent the page from becoming too wide. */
-body {
-  max-width: 600px;
-}
-
+ 
 /* Remove bullet points from navigation bar. */
 nav ul {
   list-style-type: none;
