@@ -65,6 +65,16 @@ public class MessageServlet extends HttpServlet {
     response.getWriter().println(json);
   }
 
+  private String testMethod(String in) {
+    return in.toLowerCase();
+  }
+
+  private String getUserEnteredContent(HttpServletRequest request) {
+    String content = request.getParameter("text");
+    String sanitizedContent = Jsoup.clean(content, Whitelist.none()); //jsoup.clean is used to sanitize the user content
+    return sanitizedContent;
+  }
+
   /** Stores a new {@link Message}. */
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -80,8 +90,9 @@ public class MessageServlet extends HttpServlet {
     //String regex = "(https?://\\S+\\.(png|jpg))";
     //String replacement = "<img src=\"$1\" />";
     //String textWithImagesReplaced = userText.replaceAll(regex, replacement);
-    String userEnteredContent = request.getParameter("text");
-    String sanitizedContent = Jsoup.clean(userEnteredContent, Whitelist.none()); //jsoup.clean is used to sanitize the user content
+    String userEnteredContentVar = getUserEnteredContent(request);
+    String ns = testMethod(userEnteredContentVar);
+    String sanitizedContent = Jsoup.clean(userEnteredContentVar, Whitelist.none()); //jsoup.clean is used to sanitize the user content
     String recipient = request.getParameter("recipient");
 
     Message message = new Message(user, sanitizedContent, recipient);
