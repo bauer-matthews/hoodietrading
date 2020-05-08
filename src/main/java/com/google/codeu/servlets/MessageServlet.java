@@ -29,6 +29,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
+import com.google.common.base.Strings;
 
 /** Handles fetching and saving {@link Message} instances. */
 @WebServlet("/messages")
@@ -69,7 +70,7 @@ public class MessageServlet extends HttpServlet {
     return in.toLowerCase();
   }
 
-  private String getUserEnteredContent(HttpServletRequest request) {
+  private String localGetParameter(HttpServletRequest request) {
     String content = request.getParameter("text");
     String sanitizedContent = Jsoup.clean(content, Whitelist.none()); //jsoup.clean is used to sanitize the user content
     return sanitizedContent;
@@ -90,14 +91,20 @@ public class MessageServlet extends HttpServlet {
     //String regex = "(https?://\\S+\\.(png|jpg))";
     //String replacement = "<img src=\"$1\" />";
     //String textWithImagesReplaced = userText.replaceAll(regex, replacement);
-    String userEnteredContentVar = getUserEnteredContent(request);
+    String userEnteredContentVar = localGetParameter(request);
     String ns = testMethod(userEnteredContentVar);
-    String sanitizedContent = Jsoup.clean(userEnteredContentVar, Whitelist.none()); //jsoup.clean is used to sanitize the user content
+
+    String sanitizedContent = localJsoupClean(userEnteredContentVar);
+    //String sanitizedContent = Jsoup.clean(userEnteredContentVar, Whitelist.none()); //jsoup.clean is used to sanitize the user content
     String recipient = request.getParameter("recipient");
 
     Message message = new Message(user, sanitizedContent, recipient);
     datastore.storeMessage(message);
 
     response.sendRedirect("/user-page.html?user=" + recipient);
+  }
+
+  private String localJsoupClean(String val) {
+    return val;
   }
 }
