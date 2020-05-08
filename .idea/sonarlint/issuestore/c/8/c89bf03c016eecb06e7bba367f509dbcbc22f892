@@ -1,0 +1,11 @@
+
+{squid:S2226&"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(÷Ññ¢úÿÿÿÿ8×±í¡Ÿ.
+Ksquid:S1989:"(Add a "try/catch" block for "getWriter".(ıª­èùÿÿÿÿ8×±í¡Ÿ.
+Fsquid:S1989B"(Add a "try/catch" block for "getWriter".(–ı…×8×±í¡Ÿ.
+Nsquid:S1989U"+Add a "try/catch" block for "sendRedirect".(ÇÅüÃÿÿÿÿÿ8”¢Ÿ.
+Nsquid:S1989h"+Add a "try/catch" block for "sendRedirect".(ËêŞÃûÿÿÿÿ8”¢Ÿ.
+isquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(®Éğ¶8”¢Ÿ.
+†squid:S1488K"hImmediately return this expression instead of assigning it to the temporary variable "sanitizedContent".(èúºÓ8”¢Ÿ.
+Jsquid:S1481_"'Remove this unused "ns" local variable.(¹¯Èûÿÿÿÿ8”¢Ÿ.
+Ysquid:S1854_"6Remove this useless assignment to local variable "ns".(¹¯Èûÿÿÿÿ8”¢Ÿ.
+ksquid:UselessImportCheck ";Remove this unused import 'com.google.common.base.Strings'.(¬êÅ¡øÿÿÿÿ8”¢Ÿ.
